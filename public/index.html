@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Import the functions you need from the SDKs you need -->
+    <script type="module">
+        import { initializeApp } from "firebase/app";
+        import { getAnalytics } from "firebase/analytics";
+        import { getAuth } from "firebase/auth";
+        import { getFirestore } from 'firebase/firestore';
+        import { getStorage } from "firebase/compat/storage";
+        import { getVertexAI, getGenerativeModel } from 'firebase/vertexai-preview';
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB4bF7UEsZ95xuhJMR1eTLcNeZRhF061k4",
+            authDomain: "trashright-23831.firebaseapp.com",
+            projectId: "trashright-23831",
+            storageBucket: "trashright-23831.appspot.com",
+            messagingSenderId: "76551130231",
+            appId: "1:76551130231:web:b5a90f1051db907f36ca72",
+            measurementId: "G-B3C6Y47P1K"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const storage = getStorage(app);
+        const vertexAI = getVertexAI(firebaseApp);
+        const model = getGenerativeModel(vertexAI, { model: "gemini-1.5-flash" });
+    </script>
+
+    <script src="App.js" defer></script>
+</body>
+</html>
